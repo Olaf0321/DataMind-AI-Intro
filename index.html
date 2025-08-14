@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクト紹介</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="#" class="logo"><i class="fab fa-node-js"></i> Olaf0321</a>
+    </header>
+
+    <main>
+        <h1 class="main-title">DataMind-AI</h1>
+
+        <!-- 代表画像 -->
+        <div class="main-image">
+            <img src="images/1.png" alt="代表火傷">
+        </div>
+
+        <!-- 下の2つの画像 -->
+        <div class="burns">
+            <img class="burn" src="images/2.png" alt="火傷サブ1">
+            <img class="burn" src="images/3.png" alt="火傷サブ2">
+        </div>
+
+        <div class="description">
+            <p>
+                生成AIを自社好みのナレッジDBとして活用する際に、
+                <strong>RAG（Retrieval-Augmented Generation）</strong> という考え方が主流となっています。
+                RAGはチャット形式でプロンプトを投げ、AIから直接キーワード指定でベクトル検索により関連性の高い結果を抽出する技術です。
+                ナレッジ検索に非常に向いた技術といえます。
+            </p>
+
+            <p>
+                しかしデータの加工や分析用途では、文字列検索が前提となるため、
+                思ったような成果が得られないケースがあります。
+            </p>
+
+            <h2>💡 当社のアプローチ</h2>
+            <p>
+                当社の提案は、RAGとは別のアプローチでデータベースと生成AIを連携し、
+                <strong>自然言語での検索指示 → Select文生成 → 必要データをKey&ValueでAIへ渡す</strong>
+                という流れで確実に成果を得るデータ利活用システムです。
+            </p>
+
+            <p>
+                業務に必要なデータだけを条件指定により抽出し、生成AIに提供することで、
+                正確かつ確実にプロンプトを実行できます。もちろん壁打ちも可能です。
+            </p>
+
+            <h2>📊 利用例</h2>
+            <ul>
+                <li>顧客マスタと購買テーブルを連動し、特定顧客のリストを自動抽出</li>
+                <li>購入者条件を指定して売上傾向を分析</li>
+                <li>BIとは異なるアプローチでの分析・可視化・資料生成</li>
+                <li>加工結果をKey&Valueでデータベースに保存</li>
+            </ul>
+
+            <h2>🔄 創造的なデータサイクル</h2>
+            <p>
+                「検索 → 加工 → 保存」のサイクルを繰り返し、創造的なデータ活用を実現します。
+                このサイクルはタスク登録可能で、外部サービスから変数を書き換えて
+                月次処理などのバッチ実行も可能です。
+            </p>
+
+            <h2>🚀 今後の展望</h2>
+            <p>
+                今後は <strong>MCP（Model Context Protocol）</strong> 対応を計画中です。
+                MCPはAIに様々なクラウドサービスやツールをUSBのように接続するための標準プロトコルで、
+                RAG対応も可能になります。
+            </p>
+            <p>
+                MCP上でワークフローを実行することで、様々な業務の自動化を実現します。
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        開発期間: 2025年4月〜2025年7月
+    </footer>
+
+</body>
+
+</html>

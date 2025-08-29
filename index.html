@@ -119,10 +119,17 @@
 
                     const result = await res.json();
                     console.log("Backend response:", result);
-                    alert("Submission successful!");
+
+                    // Check if the backend returned an error message in "detail"
+                    if (result.detail && result.detail === "認証に失敗しました") {
+                        alert("Authentication failed!"); // show authentication failure
+                    } else {
+                        alert("Submission successful!"); // otherwise success
+                    }
+
                 } catch (err) {
                     console.error("Error:", err);
-                    alert("Submission failed!");
+                    alert("Submission failed due to network error!");
                 }
             });
         </script>

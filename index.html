@@ -80,12 +80,26 @@
             </p>
         </div>
 
-        <form id="myForm">
-            <label>number:</label>
-            <input type="text" name="number" required>
-            <label>apiKey:</label>
-            <input type="text" id="apiKey" name="apiKey" required>
-            <button type="submit">送信</button>
+
+
+        <form id="myForm"
+            style="display:flex; flex-direction:column; gap:20px; width:300px; margin:40px auto; font-family:sans-serif;">
+
+            <div style="display:flex; align-items:center; justify-content:flex-start; gap:10px;">
+                <label style="flex:0 0 80px; text-align:left;">company_name:</label>
+                <input type="text" name="company_name" required
+                    style="flex:1; padding:8px; border:1px solid #ccc; border-radius:6px; font-size:14px;">
+            </div>
+
+            <div style="display:flex; align-items:center; justify-content:flex-start; gap:10px;">
+                <label style="flex:0 0 80px; text-align:left;">apiKey:</label>
+                <input type="text" id="apiKey" name="apiKey" required
+                    style="flex:1; padding:8px; border:1px solid #ccc; border-radius:6px; font-size:14px;">
+            </div>
+            <button type="submit"
+                style="padding:10px 16px; background:#4a90e2; color:#fff; border:none; border-radius:6px; font-size:15px; cursor:pointer;">
+                送信
+            </button>
         </form>
 
         <script>
@@ -107,7 +121,7 @@
                 const domainName = window.location.hostname;
 
                 try {
-                    const res = await fetch("http://localhost:8080/variableTask/4/1", {
+                    const res = await fetch("http://localhost:8080/variableTask/10/1", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -120,19 +134,19 @@
                     const result = await res.json();
                     console.log("Backend response:", result);
 
-                    // Check if the backend returned an error message in "detail"
                     if (result.detail && result.detail === "認証に失敗しました") {
-                        alert("Authentication failed!"); // show authentication failure
+                        alert("認証に失敗しました!");
                     } else {
-                        alert("Submission successful!"); // otherwise success
+                        alert("送信成功しました!");
                     }
-
                 } catch (err) {
                     console.error("Error:", err);
-                    alert("Submission failed due to network error!");
+                    alert("ネットワークエラーのため送信に失敗しました。");
                 }
             });
         </script>
+
+
 
     </main>
 

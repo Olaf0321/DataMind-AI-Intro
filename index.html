@@ -102,12 +102,15 @@
             const apiKey = document.getElementById("apiKey").value;
             const domainName = window.location.hostname; // dynamically get domain
 
-            const formData = { number, apiKey, domainName };
+            const formData = { number, domainName };
             console.log('formData: ', formData);
 
             const res = await fetch("http://localhost:8080/variableTask/4/1", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${apiKey}` // pass apiKey as token
+                },
                 body: JSON.stringify(formData)
             });
 
